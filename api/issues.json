@@ -1,1 +1,45 @@
-"issues"
+{
+    "issues": [
+      {
+        "id": 2,
+        "address": "1001 UNITED WAY",
+        "issueTypeId": 2
+      },
+      {
+        "id": 3,
+        "address": "7033 Thata way",
+        "issueTypeId": 1
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "name": "Juniper Juicy",
+        "email": "Jupiter@juicy.com"
+      },
+      {
+        "id": 2,
+        "name": "Belly Billion",
+        "email": "Belly@tum.com"
+      },
+      {
+        "id": 3,
+        "name": "Pepperoni Pep",
+        "email": "Pizza@salmon.com"
+      }
+    ],
+    "issueTypes": [
+      {
+        "id": 1,
+        "type": "pothole"
+      },
+      {
+        "id": 2,
+        "type": "sidewalk"
+      },
+      {
+        "id": 3,
+        "type": "traffic light"
+      }
+    ]
+  }
