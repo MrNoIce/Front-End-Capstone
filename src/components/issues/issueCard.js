@@ -20,7 +20,7 @@ export default class IssueCard extends Component {
               className="btn btn-success"
               onClick={() => {
                 this.props.history.push(
-                  `/issue/${this.props.issue.id}/edit`
+                  `/issues/${this.props.issue.id}/edit`
                 );
               }}
             >
