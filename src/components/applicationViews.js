@@ -9,6 +9,8 @@ import loginManager from "./modules/loginManager";
 import IssueEditForm from "./issues/issueEditForm";
 import IssueForm from "./issues/newIssueForm"
 import "./issues/issues.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 export default class ApplicationViews extends Component {
   state = {
@@ -46,6 +48,7 @@ export default class ApplicationViews extends Component {
   getUser = userName => {
     return loginManager.get("user", userName);
   };
+
 
   render() {
     return (

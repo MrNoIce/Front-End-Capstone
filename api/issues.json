@@ -27,6 +27,20 @@
       "issueTypeId": "2",
       "userId": 3,
       "id": 5
+    },
+    {
+      "address": "Doc Browns House",
+      "details": "These roads arent necessary.. where were going.. we wont need them",
+      "issueTypeId": "The flux capacitor",
+      "userId": 3,
+      "id": 6
+    },
+    {
+      "address": "22 dickerson pike",
+      "details": "This pothole is something else",
+      "issueTypeId": "",
+      "userId": 3,
+      "id": 7
     }
   ],
   "users": [

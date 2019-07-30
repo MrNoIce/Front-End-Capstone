@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "./issues.css"
-
+// import ReactDOM, {render} from 'react-dom'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./issues.css";
 
 export default class IssueForm extends Component {
   // Set initial state
@@ -31,9 +32,7 @@ export default class IssueForm extends Component {
       };
 
       // Create the article and redirect user to article list
-      this.props
-        .addIssue(issue)
-        .then(() => this.props.history.push("/issues"));
+      this.props.addIssue(issue).then(() => this.props.history.push("/issues"));
     }
   };
 
@@ -65,14 +64,29 @@ export default class IssueForm extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="issueTypeId">Issue Type</label>
-            <input
-              type="text"
-              required
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="issueTypeId"
-              placeholder="IssueTypeId"
-            />
+            <div className="dropdown">
+              <button
+                className="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Dropdown button
+              </button>
+              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a className="dropdown-item" href="#">
+                  Action
+                </a>
+                <a className="dropdown-item" href="#">
+                  Another action
+                </a>
+                <a className="dropdown-item" href="#">
+                  Something else here
+                </a>
+              </div>
+            </div>
           </div>
           <button
             type="submit"
