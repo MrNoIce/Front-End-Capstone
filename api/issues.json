@@ -2,7 +2,7 @@
   "issues": [
     {
       "id": 2,
-      "address": "1001 UNITED WAY",
+      "address": "1001 UNITED WAY in the way of the dog",
       "details": "This street needs a sidewalk and maybe some nice flowers and some funyons",
       "issueTypeId": "",
       "userId": 3
@@ -20,6 +20,13 @@
       "details": "Traffic lights out. Needs a good replacing and reprogramming",
       "issueTypeId": 3,
       "userId": 3
+    },
+    {
+      "address": "25-1 dickerson pike",
+      "details": "This pothole is something else",
+      "issueTypeId": "2",
+      "userId": 3,
+      "id": 5
     }
   ],
   "users": [
