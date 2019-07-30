@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import "./issues.css"
 
 export default class IssueCard extends Component {
   render() {
@@ -8,7 +9,7 @@ export default class IssueCard extends Component {
       <div key={this.props.issue.id} className="card">
         <div className="card-body">
           <div className="card-title">
-            <img src={"..."} className="" alt=""/>
+            <img src={"..."} className="" alt="..."/>
             <h5>{this.props.issue.address}</h5>
             <h5>{this.props.issue.issueTypeId}</h5>
             <h6>{this.props.issue.details}</h6>
@@ -17,7 +18,7 @@ export default class IssueCard extends Component {
             </Link>
             <button
               type="button"
-              className="btn btn-success"
+              className="btn btn-info"
               onClick={() => {
                 this.props.history.push(
                   `/issues/${this.props.issue.id}/edit`

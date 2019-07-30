@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import issueManager from "../modules/issueManager";
+import "./issues.css"
 
 export default class IssueEditForm extends Component {
   // Set initial state
@@ -19,15 +20,15 @@ export default class IssueEditForm extends Component {
   updateExistingIssue = evt => {
     evt.preventDefault();
 
-    if (!this.state.title === null) {
+    if (!this.state.address === null) {
       window.alert("Hullo?");
     } else {
         console.log(this.state)
       const editedIssue = {
         id: this.props.match.params.issueId,
-        title: this.state.title,
-        url: this.state.url,
-        synopsis: this.state.synopsis,
+        address: this.state.address,
+        details: this.state.details,
+        issueTypeId: this.state.issueTypeId,
         userId: parseInt(this.state.userId)
       };
 

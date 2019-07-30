@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import IssueCard from "./issueCard";
 import issueManager from "../modules/issueManager";
+import "./issues.css"
 
 
 
@@ -28,7 +29,7 @@ getUserIssues = () => {
           <button
             type="button"
             onClick={() => this.props.history.push("/issues/new")}
-            className="btn btn-success"
+            className="btn btn-primary"
           >
             Add New Article
           </button>

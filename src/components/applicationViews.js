@@ -7,6 +7,7 @@ import Register from "./authentication/register";
 import issueManager from "./modules/issueManager"
 import loginManager from "./modules/loginManager"
 import IssueEditForm from "./issues/issueEditForm"
+import "./issues/issues.css"
 
 export default class ApplicationViews extends Component {
   state = {
@@ -22,15 +23,15 @@ export default class ApplicationViews extends Component {
 
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
-//   componentDidMount() {
-//     const newState = {};
-
-//     fetch("http://localhost:5002/issues")
-//       .then(r => r.json())
-//       .then(issues => (newState.issues = issues))
-//       .then(() => this.setState(newState));
-//   }
-
+  updateIssue = (resourse, editedIssueObject) => {
+    return issueManager.put(resourse, editedIssueObject)
+      .then(() => issueManager.all(resourse))
+      .then(issues => {
+        this.setState({
+          issues: issues
+        });
+      });
+    };
   getUser = userName => {
     return loginManager.get("user", userName);
   };
