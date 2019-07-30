@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import "./issue.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class IssueCard extends Component {
   render() {
@@ -11,6 +11,7 @@ export default class IssueCard extends Component {
             <img src={"..."} className="" alt=""/>
             <h5>{this.props.issue.address}</h5>
             <h5>{this.props.issue.issueTypeId}</h5>
+            <h6>{this.props.issue.details}</h6>
             <Link className="nav-link" to={`/issue/${this.props.issue.id}`}>
               Details
             </Link>
