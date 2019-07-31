@@ -16,6 +16,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default class ApplicationViews extends Component {
   state = {
     issues: [],
+    lngLat: [],
     users: []
   };
 

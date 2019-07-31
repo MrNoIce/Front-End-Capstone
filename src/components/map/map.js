@@ -5,12 +5,16 @@ const TOKEN =
   "pk.eyJ1IjoiamFrZXNjb3R0MSIsImEiOiJjanlyZGhkMXcwMTQxM2ptdjBjbDU1bGllIn0.k1hr4yy2-s0IysSwf4z8Kg";
 const navStyle = {
   position: "absolute",
-  top: 0,
+  top: 50,
   left: 0,
   padding: "10px"
 };
 
+
 class Map extends Component {
+    state = {
+        lngLat: []
+    }
   constructor(props) {
     super(props);
     this.state = {
@@ -29,6 +33,7 @@ class Map extends Component {
   }
   _onClickMap(evt) {
     console.log(evt.lngLat);
+    
   }
 
   render() {

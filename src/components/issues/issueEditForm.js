@@ -8,7 +8,9 @@ export default class IssueEditForm extends Component {
     userId: "",
     address: "",
     details: "",
-    issueTypeId: ""
+    issueTypeId: "",
+    longitude: "",
+    latitude: ""
   };
 
   handleFieldChange = evt => {
@@ -29,6 +31,8 @@ export default class IssueEditForm extends Component {
         address: this.state.address,
         details: this.state.details,
         issueTypeId: this.state.issueTypeId,
+        longitude: this.state.longitude,
+        latitude: this.state.latitude,
         userId: parseInt(this.state.userId)
       };
 
@@ -44,7 +48,9 @@ export default class IssueEditForm extends Component {
         userId: issue.userId,
         address: issue.address,
         details: issue.details,
-        userTypeId: issue.userTypeId
+        userTypeId: issue.userTypeId,
+        longitude: issue.longitude,
+        latitude: issue.latitude
       });
     });
   }
@@ -84,6 +90,28 @@ export default class IssueEditForm extends Component {
               onChange={this.handleFieldChange}
               id="issueTypeId"
               value={this.state.issueTypeId}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="longitude">Longitude</label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="longitude"
+              value={this.state.longitude}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="latitude">Latitude</label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="latitude"
+              value={this.state.latitude}
             />
           </div>
           <button
