@@ -3,7 +3,7 @@ import ReactMapGL, { NavigationControl, GeolocateControl } from "react-map-gl";
 // import ".env"
 import "mapbox-gl/dist/mapbox-gl.css";
 
-const API_KEY = process.env.REACT_APP_API_KEY
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 const navStyle = {
   position: "absolute",
@@ -12,11 +12,10 @@ const navStyle = {
   padding: "10px"
 };
 
-
 class Map extends Component {
-    state = {
-        lngLat: []
-    }
+  state = {
+    lngLat: []
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -27,7 +26,7 @@ class Map extends Component {
         bearing: 0,
         pitch: 0,
         width: 1000,
-        height: 700,
+        height: 700
         // longitude: position.coords.longitude,
         // latitude: position.coords.latitude
       }
@@ -35,7 +34,9 @@ class Map extends Component {
   }
   _onClickMap(evt) {
     console.log(evt.lngLat);
-
+    this.setState({
+      lngLat: evt.lngLat
+    });
   }
 
   render() {
