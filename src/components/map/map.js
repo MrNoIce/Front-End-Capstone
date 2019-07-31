@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import ReactMapGL, { NavigationControl, GeolocateControl } from "react-map-gl";
+// import ".env"
 import "mapbox-gl/dist/mapbox-gl.css";
-const TOKEN =
-  "pk.eyJ1IjoiamFrZXNjb3R0MSIsImEiOiJjanlyZGhkMXcwMTQxM2ptdjBjbDU1bGllIn0.k1hr4yy2-s0IysSwf4z8Kg";
+
+const API_KEY = process.env.REACT_APP_API_KEY
+
 const navStyle = {
   position: "absolute",
   top: 50,
@@ -33,7 +35,7 @@ class Map extends Component {
   }
   _onClickMap(evt) {
     console.log(evt.lngLat);
-    
+
   }
 
   render() {
@@ -46,7 +48,7 @@ class Map extends Component {
           height: "100vh",
           width: "100vw"
         }}
-        mapboxApiAccessToken={TOKEN}
+        mapboxApiAccessToken={API_KEY}
         onViewportChange={viewport => this.setState({ viewport })}
         onClick={this._onClickMap}
       >
