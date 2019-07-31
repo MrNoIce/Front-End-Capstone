@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import MapGL, { NavigationControl } from "react-map-gl";
-import 'mapbox-gl/dist/mapbox-gl.css';
+import ReactMapGL, { NavigationControl, GeolocateControl } from "react-map-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
 const TOKEN =
   "pk.eyJ1IjoiamFrZXNjb3R0MSIsImEiOiJjanlyZGhkMXcwMTQxM2ptdjBjbDU1bGllIn0.k1hr4yy2-s0IysSwf4z8Kg";
 const navStyle = {
@@ -9,6 +9,7 @@ const navStyle = {
   left: 0,
   padding: "10px"
 };
+
 class Map extends Component {
   constructor(props) {
     super(props);
@@ -20,27 +21,38 @@ class Map extends Component {
         bearing: 0,
         pitch: 0,
         width: 1000,
-        height: 700
+        height: 700,
+        // longitude: position.coords.longitude,
+        // latitude: position.coords.latitude
       }
     };
   }
+  _onClickMap(evt) {
+    console.log(evt.lngLat);
+  }
+
   render() {
     const { viewport } = this.state;
     return (
-      <MapGL
+      <ReactMapGL
         {...viewport}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         containerStyle={{
-            height: '100vh',
-            width: '100vw'
-          }}
+          height: "100vh",
+          width: "100vw"
+        }}
         mapboxApiAccessToken={TOKEN}
+        onViewportChange={viewport => this.setState({ viewport })}
+        onClick={this._onClickMap}
       >
+        <div style={{ position: "absolute", right: 0 }} />>
         <div className="nav" style={navStyle}>
-          <NavigationControl/>
+          <NavigationControl />
+          <GeolocateControl />
         </div>
-      </MapGL>
+      </ReactMapGL>
     );
   }
 }
+
 export default Map;
