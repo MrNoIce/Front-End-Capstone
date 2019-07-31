@@ -9,6 +9,7 @@ import loginManager from "./modules/loginManager";
 import IssueEditForm from "./issues/issueEditForm";
 import IssueForm from "./issues/newIssueForm"
 import "./issues/issues.css";
+import Map from "./map/map"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -99,6 +100,11 @@ export default class ApplicationViews extends Component {
           render={props => {
             return <IssueEditForm {...props} updateIssue={this.updateIssue} />;
           }}
+        />
+        <Route
+          exact
+          path="/map"
+          component={Map}
         />
         <Route exact path="/login" component={Login} />
       </React.Fragment>

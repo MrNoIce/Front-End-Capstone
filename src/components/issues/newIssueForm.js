@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-// import ReactDOM, {render} from 'react-dom'
+import ReactDOM, {render} from 'react-dom'
+// import { dropdown-toggle } from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./issues.css";
 
