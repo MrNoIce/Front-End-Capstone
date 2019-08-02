@@ -9,7 +9,7 @@ import loginManager from "./modules/loginManager";
 import IssueEditForm from "./issues/issueEditForm";
 import IssueForm from "./issues/newIssueForm"
 import "./issues/issues.css";
-import Map from "./map/map"
+import Image from "./map/map"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -106,11 +106,21 @@ export default class ApplicationViews extends Component {
             return <IssueEditForm {...props} updateIssue={this.updateIssue} />;
           }}
         />
-        {/* <Route
+        <Route
           exact
           path="/map"
-          component={Map}
-        /> */}
+          render={props => {
+            if (this.isAuthenticated()) {
+              return (
+                <Image
+                  {...props}
+                />
+              );
+            } else {
+              return <Redirect to="/login" />;
+            }
+          }}
+        />
         <Route exact path="/login" component={Login} />
       </React.Fragment>
     );
