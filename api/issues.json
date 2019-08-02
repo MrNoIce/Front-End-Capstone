@@ -5,8 +5,7 @@
       "address": "1001 UNITED WAY in the way of the dog",
       "details": "This street needs a sidewalk and maybe some nice flowers and some funyons and some snakes",
       "issueTypeId": "",
-      "longitude": "98.742983465",
-      "latitude": "01.984765019",
+      "lngLat": "",
       "userId": 3
     },
     {
@@ -14,8 +13,7 @@
       "address": "7033 Thata way",
       "details": "Potholes have taken everything from me.. Even my good tires",
       "issueTypeId": 1,
-      "longitude": "",
-      "latitude": "",
+      "lngLat": "",
       "userId": 2
     },
     {
@@ -23,16 +21,14 @@
       "address": "7991 Thissa way",
       "details": "Traffic lights out. Needs a good replacing and reprogramming",
       "issueTypeId": 3,
-      "longitude": "",
-      "latitude": "",
+      "lngLat": "",
       "userId": 3
     },
     {
       "address": "25-1 dickerson pike",
       "details": "This pothole is something else",
       "issueTypeId": "2",
-      "longitude": "",
-      "latitude": "",
+      "lngLat": "",
       "userId": 3,
       "id": 5
     },
@@ -41,18 +37,24 @@
       "address": "Doc Browns House",
       "details": "These roads arent necessary.. where were going.. we wont need them",
       "issueTypeId": "",
-      "longitude": "Terry",
-      "latitude": "Tomlin",
+      "lngLat": "",
       "userId": 3
     },
     {
       "address": "22 dickerson pike",
       "details": "This pothole is something else",
       "issueTypeId": "",
-      "longitude": "",
-      "latitude": "",
+      "lngLat": "",
       "userId": 3,
       "id": 7
+    },
+    {
+      "address": "88 ninty nine",
+      "details": "This pothole is something else",
+      "issueTypeId": "",
+      "lngLat": "",
+      "userId": 3,
+      "id": 8
     }
   ],
   "users": [

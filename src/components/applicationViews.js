@@ -13,6 +13,7 @@ import Map from "./map/map"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
+
 export default class ApplicationViews extends Component {
   state = {
     issues: [],
@@ -27,6 +28,16 @@ export default class ApplicationViews extends Component {
   //   };
 
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
+
+//   addLocation = lngLat =>
+//     issueManager
+//       .post("issues", lngLat)
+//       .then(() => issueManager.all("issues"))
+//       .then(lngLat =>
+//         this.setState({
+//           lngLat: lngLat
+//         })
+//       );
 
   updateIssue = (resourse, editedIssueObject) => {
     return issueManager
@@ -55,13 +66,6 @@ export default class ApplicationViews extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <Route
-          exact
-          path="/"
-          render={props => {
-            return <IssueList issues={this.state.issues} />;
-          }}
-        /> */}
         <Route
           exact
           path="/issues"
