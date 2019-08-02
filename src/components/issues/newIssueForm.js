@@ -17,7 +17,7 @@ const navStyle = {
 
 export default class IssueForm extends Component {
   // Set initial state
-  onClickMap(evt) {
+  onClickMap = (evt) => {
     console.log(evt.lngLat);
     this.setState({
       lngLat: evt.lngLat
@@ -111,6 +111,7 @@ export default class IssueForm extends Component {
               type="text"
               required
               className="form-control"
+              value= {this.state.lngLat}
               onChange={this.handleFieldChange}
               id="lngLat"
               placeholder="Location"
@@ -162,7 +163,7 @@ export default class IssueForm extends Component {
           }}
           mapboxApiAccessToken={API_KEY}
           onViewportChange={viewport => this.setState({ viewport })}
-          onClick={this.onClickMap.bind(this)}
+          onClick={ (evt) => this.onClickMap(evt)}
         >
           <div style={{ position: "absolute", right: 0 }} />>
           <div className="nav" style={navStyle}>

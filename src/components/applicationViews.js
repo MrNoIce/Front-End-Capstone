@@ -106,11 +106,11 @@ export default class ApplicationViews extends Component {
             return <IssueEditForm {...props} updateIssue={this.updateIssue} />;
           }}
         />
-        <Route
+        {/* <Route
           exact
           path="/map"
           component={Map}
-        />
+        /> */}
         <Route exact path="/login" component={Login} />
       </React.Fragment>
     );
