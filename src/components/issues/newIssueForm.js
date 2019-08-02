@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import ReactDOM, { render } from "react-dom";
-// import Map from "../map/map";
+import {
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from "reactstrap";
 import ReactMapGL, { NavigationControl, GeolocateControl } from "react-map-gl";
-// import IssueForm from "../issues/newIssueForm"
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./issues.css";
 
@@ -17,14 +21,18 @@ const navStyle = {
 
 export default class IssueForm extends Component {
   // Set initial state
-  onClickMap = (evt) => {
+  onClickMap = evt => {
     console.log(evt.lngLat);
     this.setState({
       lngLat: evt.lngLat
     });
-  }
+  };
   constructor(props) {
     super(props);
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      dropdownOpen: false
+    };
     this.state = {
       viewport: {
         longitude: -86.7816016,
@@ -38,17 +46,15 @@ export default class IssueForm extends Component {
         details: "",
         issueTypeId: "",
         lngLat: ""
-        // longitude: position.coords.longitude,
-        // latitude: position.coords.latitude
       }
     };
   }
-  //   state = {
-  //     address: "",
-  //     details: "",
-  //     issueTypeId: "",
-  //     lngLat: ""
-  //   };
+
+  toggle() {
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }));
+  }
 
   // Update state whenever an input field is edited
   handleFieldChange = evt => {
@@ -72,12 +78,14 @@ export default class IssueForm extends Component {
 
       // Create the article and redirect user to article list
       this.props.addIssue(issue).then(() => this.props.history.push("/issues"));
-      //   this.props
-      //     .addLocation(this.props.lngLat)
-      //     .then(() => this.props.history.push("/issues"));
     }
   };
 
+  toggle() {
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }));
+  }
   render() {
     const { viewport } = this.state;
     return (
@@ -111,40 +119,25 @@ export default class IssueForm extends Component {
               type="text"
               required
               className="form-control"
-              value= {this.state.lngLat}
+              value={this.state.lngLat}
               onChange={this.handleFieldChange}
               id="lngLat"
-              placeholder="Location"
+              placeholder="Click on the map for the specific location"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="issueTypeId">Issue Type</label>
-            <div className="dropdown">
-              <button
-                className="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Dropdown button
-              </button>
-              <div
-                className="dropdown-menu"
-                aria-labelledby="dropdownMenuButton"
-              >
-                <a className="dropdown-item" href="#">
-                  Action
-                </a>
-                <a className="dropdown-item" href="#">
-                  Another action
-                </a>
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </div>
-            </div>
+            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+              <DropdownToggle caret>Dropdown</DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem header>Choose issue type</DropdownItem>
+                {/* <DropdownItem>Some Action</DropdownItem> */}
+                {/* <DropdownItem disabled>Action (disabled)</DropdownItem> */}
+                <DropdownItem divider />
+                <DropdownItem>Road Condition</DropdownItem>
+                <DropdownItem>Side Walk</DropdownItem>
+                <DropdownItem>Traffic Light</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
           </div>
           <button
             type="submit"
@@ -163,11 +156,10 @@ export default class IssueForm extends Component {
           }}
           mapboxApiAccessToken={API_KEY}
           onViewportChange={viewport => this.setState({ viewport })}
-          onClick={ (evt) => this.onClickMap(evt)}
+          onClick={evt => this.onClickMap(evt)}
         >
           <div style={{ position: "absolute", right: 0 }} />>
           <div className="nav" style={navStyle}>
-            {/* <IssueForm lngLat={this.state} /> */}
             <NavigationControl />
             <GeolocateControl />
           </div>

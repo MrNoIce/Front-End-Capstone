@@ -55,6 +55,17 @@
       "lngLat": "",
       "userId": 3,
       "id": 8
+    },
+    {
+      "id": 9,
+      "address": "Main street be jumpin mane",
+      "details": "This pothole is something else when we go down south",
+      "issueTypeId": "",
+      "lngLat": [
+        -86.78425804135055,
+        36.167844219033846
+      ],
+      "userId": 3
     }
   ],
   "users": [
