@@ -26,13 +26,13 @@ getUserIssues = () => {
     return (
       <React.Fragment>
         <div className="issueButton">
-          <button
+          {/* <button
             type="button"
-            onClick={() => this.props.history.push("/issues/new")}
+            onClick={() => window.open('mailto:bemybanker@gmail.com')}
             className="btn btn-primary"
           >
             Add New Article
-          </button>
+          </button> */}
         </div>
         <section className="issues">
           {this.state.issues.map(issue => (

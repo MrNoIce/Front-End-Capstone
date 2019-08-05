@@ -23,7 +23,11 @@ class Image extends Component {
         imgExtension={[".jpg", ".gif", ".png", ".gif"]}
         maxFileSize={5242880}
       />
+
     );
+    // <div className="image">
+    //     pictures={this.state.pictures}
+    //   </div>
   }
 }
 

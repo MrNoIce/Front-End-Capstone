@@ -127,7 +127,7 @@ export default class IssueForm extends Component {
           </div>
           <div className="form-group">
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-              <DropdownToggle caret>Dropdown</DropdownToggle>
+              <DropdownToggle caret>Issue type</DropdownToggle>
               <DropdownMenu>
                 <DropdownItem header>Choose issue type</DropdownItem>
                 {/* <DropdownItem>Some Action</DropdownItem> */}
@@ -158,7 +158,7 @@ export default class IssueForm extends Component {
           onViewportChange={viewport => this.setState({ viewport })}
           onClick={evt => this.onClickMap(evt)}
         >
-          <div style={{ position: "absolute", right: 0 }} />>
+          <div style={{ position: "absolute", right: 0 }} />
           <div className="nav" style={navStyle}>
             <NavigationControl />
             <GeolocateControl />
