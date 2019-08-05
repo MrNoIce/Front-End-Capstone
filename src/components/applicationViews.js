@@ -9,7 +9,7 @@ import loginManager from "./modules/loginManager";
 import IssueEditForm from "./issues/issueEditForm";
 import IssueForm from "./issues/newIssueForm"
 import "./issues/issues.css";
-import Image from "./map/map"
+import Image from "./imgUpload/imgUpload"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -108,7 +108,7 @@ export default class ApplicationViews extends Component {
         />
         <Route
           exact
-          path="/map"
+          path="/imgUpload"
           render={props => {
             if (this.isAuthenticated()) {
               return (

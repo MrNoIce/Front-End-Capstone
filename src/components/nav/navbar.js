@@ -18,8 +18,8 @@ class NavBar extends Component {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/map">
-              Mappie
+            <Link className="nav-link" to="/imgUpload">
+              Upload Image
             </Link>
           </li>
         </ul>
