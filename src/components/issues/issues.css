@@ -9,3 +9,12 @@
     display: block;
     position: absolute;
   } */
+
+.FileUpload {
+    border: 3px solid grey;
+    display: flex;
+    float: right;
+}
+.form-group {
+    border: 3px solid grey;
+}

@@ -79,6 +79,7 @@ export default class IssueForm extends Component {
         details: this.state.details,
         issueTypeId: this.state.issueTypeId,
         lngLat: this.state.lngLat,
+        picture: this.state.uploadedFileCloudinaryUrl,
         userId: parseInt(sessionStorage.getItem("userId"))
       };
 
