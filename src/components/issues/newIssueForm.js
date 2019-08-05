@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM, { render } from "react-dom";
+import Dropzone from "react-dropzone";
+import request from "superagent";
 import {
   Dropdown,
   DropdownToggle,
@@ -11,6 +13,9 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import "./issues.css";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
+const CLOUDINARY_UPLOAD_PRESET = "uploadCapstone";
+const CLOUDINARY_UPLOAD_URL =
+  "https://api.cloudinary.com/v1_1/dqwaphhqv/image/upload";
 
 const navStyle = {
   position: "absolute",
@@ -45,7 +50,8 @@ export default class IssueForm extends Component {
         address: "",
         details: "",
         issueTypeId: "",
-        lngLat: ""
+        lngLat: "",
+        uploadedFileCloudinaryUrl: ""
       }
     };
   }
@@ -86,6 +92,33 @@ export default class IssueForm extends Component {
       dropdownOpen: !prevState.dropdownOpen
     }));
   }
+                                      //image uploading
+  onImageDrop(files) {
+    this.setState({
+      uploadedFile: files[0]
+    });
+
+    this.handleImageUpload(files[0]);
+  }
+  handleImageUpload(file) {
+    let upload = request
+      .post(CLOUDINARY_UPLOAD_URL)
+      .field("upload_preset", CLOUDINARY_UPLOAD_PRESET)
+      .field("file", file);
+
+    upload.end((err, response) => {
+      if (err) {
+        console.error(err);
+      }
+
+      if (response.body.secure_url !== "") {
+        this.setState({
+          uploadedFileCloudinaryUrl: response.body.secure_url
+        });
+      }
+    });
+  }
+
   render() {
     const { viewport } = this.state;
     return (
@@ -164,6 +197,38 @@ export default class IssueForm extends Component {
             <GeolocateControl />
           </div>
         </ReactMapGL>
+        <div>
+          <div className="FileUpload">
+            <Dropzone
+              onDrop={this.onImageDrop.bind(this)}
+              accept="image/*"
+              multiple={false}
+            >
+              {({ getRootProps, getInputProps }) => {
+                return (
+                  <div {...getRootProps()}>
+                    <input {...getInputProps()} />
+                    {
+                      <p>
+                        Try dropping some files here, or click to select files
+                        to upload.
+                      </p>
+                    }
+                  </div>
+                );
+              }}
+            </Dropzone>
+          </div>
+
+          <div>
+            {this.state.uploadedFileCloudinaryUrl === "" ? null : (
+              <div>
+                {/* <p>{this.state.uploadedFile.name}</p> */}
+                <img src={this.state.uploadedFileCloudinaryUrl} />
+              </div>
+            )}
+          </div>
+        </div>
       </React.Fragment>
     );
   }

@@ -106,7 +106,7 @@ export default class ApplicationViews extends Component {
             return <IssueEditForm {...props} updateIssue={this.updateIssue} />;
           }}
         />
-        <Route
+        {/* <Route
           exact
           path="/imgUpload"
           render={props => {
@@ -120,7 +120,7 @@ export default class ApplicationViews extends Component {
               return <Redirect to="/login" />;
             }
           }}
-        />
+        /> */}
         <Route exact path="/login" component={Login} />
       </React.Fragment>
     );
