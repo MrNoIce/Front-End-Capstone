@@ -6,15 +6,23 @@ import "./issues.css"
 const emailTo = "bemybanker@gmail.com"
 const emailCC = "bemybanker@gmail.com"
 const emailSub = "insert issue subject"
-const emailBody = "insert issue details and location"
 
 export default class IssueCard extends Component {
+
   render() {
+    const emailBody = [this.props.issue.address,
+                       this.props.issue.details,
+                       this.props.issue.lngLat, 
+                       this.props.issue.picture]
+
+
     return (
       <div key={this.props.issue.id} className="card">
         <div className="card-body">
           <div className="card-title">
+            <div className="imageCard">
             <img src={this.props.issue.picture} className="" alt="..."/>
+            </div>
             <h5>Address: {this.props.issue.address}</h5>
             <h5>Issue type: {this.props.issue.issueTypeId}</h5>
             <h6>Details: {this.props.issue.details}</h6>
@@ -22,6 +30,7 @@ export default class IssueCard extends Component {
             {/* <Link className="nav-link" to={`/issue/${this.props.issue.id}`}>
               Details
             </Link> */}
+
             <button
               type="button"
               className="btn btn-info"

@@ -46,14 +46,16 @@ export default class IssueForm extends Component {
         bearing: 0,
         pitch: 0,
         width: 600,
-        height: 600,
+        height: 450,
         address: "",
         details: "",
         issueTypeId: "",
         lngLat: "",
-        uploadedFileCloudinaryUrl: ""
+        uploadedFileCloudinaryUrl: "",
+        selectValue: ""
       }
     };
+
   }
 
   toggle() {
@@ -120,6 +122,13 @@ export default class IssueForm extends Component {
     });
   }
 
+  handleDropChange(e) {
+    this.setState({ selectValue: e.target.value });
+    this.handleDropChange = this.handleDropChange.bind(this);
+
+  }
+
+
   render() {
     const { viewport } = this.state;
     return (
@@ -167,17 +176,16 @@ export default class IssueForm extends Component {
                 toggle={this.toggle}
               >
                 <DropdownToggle caret>Issue type</DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem header>Choose issue type</DropdownItem>
-                  {/* <DropdownItem>Some Action</DropdownItem> */}
-                  {/* <DropdownItem disabled>Action (disabled)</DropdownItem> */}
+                <DropdownMenu id="dropdown" >
+                  <DropdownItem header value="0" onChange={this.handleDropChange}>Choose issue type</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem>Road Condition</DropdownItem>
-                  <DropdownItem>Side Walk</DropdownItem>
-                  <DropdownItem>Traffic Light</DropdownItem>
+                  <DropdownItem value="1">Road Condition</DropdownItem>
+                  <DropdownItem value="2">Side Walk</DropdownItem>
+                  <DropdownItem value="3">Traffic Light</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </div>
+            <div>Selected value is : {this.state.selectValue}</div>
             <button
               type="submit"
               onClick={this.constructNewIssue}
