@@ -1,0 +1,2 @@
+
+CLOUDINARY_UPLOAD_PRESET="uploadCapstone";

@@ -6,7 +6,7 @@ import "./issues.css"
 const emailTo = "bemybanker@gmail.com"
 const emailCC = "bemybanker@gmail.com"
 const emailSub = "insert issue subject"
-const emailBody = "insert issue details and location]"
+const emailBody = "insert issue details and location"
 
 export default class IssueCard extends Component {
   render() {
@@ -14,7 +14,7 @@ export default class IssueCard extends Component {
       <div key={this.props.issue.id} className="card">
         <div className="card-body">
           <div className="card-title">
-            {/* <img src={"..."} className="" alt="..."/> */}
+            <img src={this.props.issue.picture} className="" alt="..."/>
             <h5>Address: {this.props.issue.address}</h5>
             <h5>Issue type: {this.props.issue.issueTypeId}</h5>
             <h6>Details: {this.props.issue.details}</h6>

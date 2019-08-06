@@ -45,8 +45,8 @@ export default class IssueForm extends Component {
         zoom: 15,
         bearing: 0,
         pitch: 0,
-        width: 1000,
-        height: 700,
+        width: 600,
+        height: 600,
         address: "",
         details: "",
         issueTypeId: "",
@@ -93,7 +93,7 @@ export default class IssueForm extends Component {
       dropdownOpen: !prevState.dropdownOpen
     }));
   }
-                                      //image uploading
+  //image uploading
   onImageDrop(files) {
     this.setState({
       uploadedFile: files[0]
@@ -124,110 +124,117 @@ export default class IssueForm extends Component {
     const { viewport } = this.state;
     return (
       <React.Fragment>
-        <form className="issueForm">
-          <div className="form-group">
-            <label htmlFor="address">Location of Issue</label>
-            <input
-              type="text"
-              required
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="address"
-              placeholder="Address"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="details">Details</label>
-            <input
-              type="text"
-              required
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="details"
-              placeholder="Details"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="lngLat">Location</label>
-            <input
-              type="text"
-              required
-              className="form-control"
-              value={this.state.lngLat}
-              onChange={this.handleFieldChange}
-              id="lngLat"
-              placeholder="Click on the map for the specific location"
-            />
-          </div>
-          <div className="form-group">
-            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-              <DropdownToggle caret>Issue type</DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem header>Choose issue type</DropdownItem>
-                {/* <DropdownItem>Some Action</DropdownItem> */}
-                {/* <DropdownItem disabled>Action (disabled)</DropdownItem> */}
-                <DropdownItem divider />
-                <DropdownItem>Road Condition</DropdownItem>
-                <DropdownItem>Side Walk</DropdownItem>
-                <DropdownItem>Traffic Light</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-          <button
-            type="submit"
-            onClick={this.constructNewIssue}
-            className="btn btn-primary"
-          >
-            Submit
-          </button>
-        </form>
-        <ReactMapGL
-          {...viewport}
-          mapStyle="mapbox://styles/mapbox/streets-v9"
-          containerStyle={{
-            height: "100vh",
-            width: "100vw"
-          }}
-          mapboxApiAccessToken={API_KEY}
-          onViewportChange={viewport => this.setState({ viewport })}
-          onClick={evt => this.onClickMap(evt)}
-        >
-          <div style={{ position: "absolute", right: 0 }} />
-          <div className="nav" style={navStyle}>
-            <NavigationControl />
-            <GeolocateControl />
-          </div>
-        </ReactMapGL>
-        <div>
-          <div className="FileUpload">
-            <Dropzone
-              onDrop={this.onImageDrop.bind(this)}
-              accept="image/*"
-              multiple={false}
+        <div className="navUpLoad">
+          <form className="issueForm">
+            <div className="form-group">
+              <label htmlFor="address">Location of Issue</label>
+              <input
+                type="text"
+                required
+                className="form-control"
+                onChange={this.handleFieldChange}
+                id="address"
+                placeholder="Address"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="details">Details</label>
+              <input
+                type="text"
+                required
+                className="form-control"
+                onChange={this.handleFieldChange}
+                id="details"
+                placeholder="Details"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="lngLat">Location</label>
+              <input
+                type="text"
+                required
+                className="form-control"
+                value={this.state.lngLat}
+                onChange={this.handleFieldChange}
+                id="lngLat"
+                placeholder="Click on the map for the specific location"
+              />
+            </div>
+            <div className="form-group">
+              <Dropdown
+                className="submitBtn"
+                isOpen={this.state.dropdownOpen}
+                toggle={this.toggle}
+              >
+                <DropdownToggle caret>Issue type</DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem header>Choose issue type</DropdownItem>
+                  {/* <DropdownItem>Some Action</DropdownItem> */}
+                  {/* <DropdownItem disabled>Action (disabled)</DropdownItem> */}
+                  <DropdownItem divider />
+                  <DropdownItem>Road Condition</DropdownItem>
+                  <DropdownItem>Side Walk</DropdownItem>
+                  <DropdownItem>Traffic Light</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </div>
+            <button
+              type="submit"
+              onClick={this.constructNewIssue}
+              className="btn btn-primary"
             >
-              {({ getRootProps, getInputProps }) => {
-                return (
-                  <div {...getRootProps()}>
-                    <input {...getInputProps()} />
-                    {
-                      <p>
-                        Try dropping some files here, or click to select files
-                        to upload.
-                      </p>
-                    }
-                  </div>
-                );
+              Submit
+            </button>
+          </form>
+          <div className="formGroupMap">
+            <ReactMapGL
+              {...viewport}
+              mapStyle="mapbox://styles/mapbox/streets-v9"
+              containerStyle={{
+                height: "100vh",
+                width: "100vw"
               }}
-            </Dropzone>
-          </div>
-
-          <div>
-            {this.state.uploadedFileCloudinaryUrl === "" ? null : (
-              <div>
-                {/* <p>{this.state.uploadedFile.name}</p> */}
-                <img src={this.state.uploadedFileCloudinaryUrl} />
+              mapboxApiAccessToken={API_KEY}
+              onViewportChange={viewport => this.setState({ viewport })}
+              onClick={evt => this.onClickMap(evt)}
+            >
+              <div style={{ position: "absolute", right: 0 }} />
+              <div className="nav" style={navStyle}>
+                <NavigationControl />
+                <GeolocateControl />
               </div>
-            )}
+            </ReactMapGL>
+          </div>
+          <div>
+            <div className="FileUpload">
+              <Dropzone
+                onDrop={this.onImageDrop.bind(this)}
+                accept="image/*"
+                multiple={false}
+              >
+                {({ getRootProps, getInputProps }) => {
+                  return (
+                    <div {...getRootProps()}>
+                      <input {...getInputProps()} />
+                      {
+                        <button>
+                          Drag and drop or click to select image to upload.
+                        </button>
+                      }
+                    </div>
+                  );
+                }}
+              </Dropzone>
+            </div>
+
+            <div>
+              {this.state.uploadedFileCloudinaryUrl === "" ? null : (
+                <div className="formGroupPicture">
+                  {/* <p>{this.state.uploadedFile.name}</p> */}
+                  <img src={this.state.uploadedFileCloudinaryUrl} />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </React.Fragment>
