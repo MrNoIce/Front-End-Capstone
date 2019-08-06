@@ -7,12 +7,9 @@ import Register from "./authentication/register";
 import issueManager from "./modules/issueManager";
 import loginManager from "./modules/loginManager";
 import IssueEditForm from "./issues/issueEditForm";
-import IssueForm from "./issues/newIssueForm"
+import IssueForm from "./issues/newIssueForm";
 import "./issues/issues.css";
-import Image from "./imgUpload/imgUpload"
 import "bootstrap/dist/css/bootstrap.min.css";
-
-
 
 export default class ApplicationViews extends Component {
   state = {
@@ -21,23 +18,14 @@ export default class ApplicationViews extends Component {
     users: []
   };
 
-  //   getUserIssues = () => {
-  //     issueManager
-  //       .getAll(parseInt(sessionStorage.getItem("userId")))
-  //       .then(userIssues => this.setState({ issues: userIssues }));
-  //   };
 
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
-//   addLocation = lngLat =>
-//     issueManager
-//       .post("issues", lngLat)
-//       .then(() => issueManager.all("issues"))
-//       .then(lngLat =>
-//         this.setState({
-//           lngLat: lngLat
-//         })
-//       );
+  deleteIssue = issue => {
+    issueManager.delete("issues", issue).then(issues => {
+      this.setState({ issues: issues });
+    });
+  };
 
   updateIssue = (resourse, editedIssueObject) => {
     return issueManager
@@ -61,7 +49,6 @@ export default class ApplicationViews extends Component {
   getUser = userName => {
     return loginManager.get("user", userName);
   };
-
 
   render() {
     return (
@@ -88,12 +75,7 @@ export default class ApplicationViews extends Component {
           path="/newIssue"
           render={props => {
             if (this.isAuthenticated()) {
-              return (
-                <IssueForm
-                  {...props}
-                  addIssue={this.addIssue}
-                />
-              );
+              return <IssueForm {...props} addIssue={this.addIssue} />;
             } else {
               return <Redirect to="/login" />;
             }

@@ -1,0 +1,15 @@
+.navBar {
+    /* border: 2px solid red; */
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+}
+/* .nav-item {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+    border: 3px solid red;
+} */

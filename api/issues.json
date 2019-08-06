@@ -1,14 +1,6 @@
 {
   "issues": [
     {
-      "id": 2,
-      "address": "1001 UNITED WAY in the way of the dog",
-      "details": "This street needs a sidewalk and maybe some nice flowers and some funyons and some snakes",
-      "issueTypeId": "",
-      "lngLat": "",
-      "userId": 3
-    },
-    {
       "id": 3,
       "address": "7033 Thata way",
       "details": "Potholes have taken everything from me.. Even my good tires",
@@ -17,77 +9,39 @@
       "userId": 2
     },
     {
-      "id": 4,
-      "address": "7991 Thissa way",
-      "details": "Traffic lights out. Needs a good replacing and reprogramming",
-      "issueTypeId": 3,
-      "lngLat": "",
-      "userId": 3
+      "address": "2119 oqwiehfbpib",
+      "details": "npoiuhwbnrpgiuk;jn",
+      "lngLat": [
+        -86.78085996920477,
+        36.16420559807321
+      ],
+      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565108176/qgyeny9yxeiw9brq8sog.jpg",
+      "userId": 3,
+      "id": 4
     },
     {
-      "address": "25-1 dickerson pike",
-      "details": "This pothole is something else",
-      "issueTypeId": "2",
-      "lngLat": "",
+      "address": "500 Interstate dr",
+      "details": "The school has moved and nonone knows about it",
+      "issueType": "Road",
+      "lngLat": [
+        -86.72622184876685,
+        36.12776000494232
+      ],
+      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565120060/okwhtazbmcdhrcp7q3ix.jpg",
       "userId": 3,
       "id": 5
     },
     {
-      "id": 6,
-      "address": "Doc Browns House",
-      "details": "These roads arent necessary.. where were going.. we wont need them",
-      "issueTypeId": "",
-      "lngLat": "",
-      "userId": 3
-    },
-    {
-      "address": "22 dickerson pike",
-      "details": "This pothole is something else",
-      "issueTypeId": "",
-      "lngLat": "",
-      "userId": 3,
-      "id": 7
-    },
-    {
-      "address": "88 ninty nine",
-      "details": "This pothole is something else",
-      "issueTypeId": "",
-      "lngLat": "",
-      "userId": 3,
-      "id": 8
-    },
-    {
-      "id": 9,
-      "address": "Main street be jumpin mane",
-      "details": "This pothole is something else when we go down south",
-      "issueTypeId": "",
+      "address": "40229 Dickerson Pike",
+      "details": "This is where the most foot traffic by necessity lies and we need some side walks",
+      "issueType": "Sidewalk",
       "lngLat": [
-        -86.78425804135055,
-        36.167844219033846
+        -86.72621146839026,
+        36.12777677349062
       ],
-      "userId": 3
-    },
-    {
-      "address": "2119 september blvd",
-      "details": "Thsis pothole is out of control",
-      "lngLat": [
-        -86.7777062674585,
-        36.160595060168816
-      ],
-      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565039470/cmtlg2mdyjvjotcihl3h.jpg",
+      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565120193/ohon4uucfd9p070pkvnf.jpg",
       "userId": 3,
-      "id": 10
-    },
-    {
-      "address": "This one will do there piggu",
-      "details": "Right there around the corner",
-      "lngLat": [
-        -86.78058940135875,
-        36.165037117050886
-      ],
-      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565051321/h3846x7knfknqqa9okqj.jpg",
-      "userId": 3,
-      "id": 11
+      "id": 6
     }
   ],
   "users": [

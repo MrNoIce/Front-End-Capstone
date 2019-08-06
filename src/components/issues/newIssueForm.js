@@ -49,12 +49,13 @@ export default class IssueForm extends Component {
         height: 450,
         address: "",
         details: "",
-        issueTypeId: "",
+        issueType: "",
         lngLat: "",
         uploadedFileCloudinaryUrl: "",
         selectValue: ""
       }
     };
+    this.handleDropChange = this.handleDropChange.bind(this);
 
   }
 
@@ -79,7 +80,7 @@ export default class IssueForm extends Component {
       const issue = {
         address: this.state.address,
         details: this.state.details,
-        issueTypeId: this.state.issueTypeId,
+        issueType: this.state.selectValue,
         lngLat: this.state.lngLat,
         picture: this.state.uploadedFileCloudinaryUrl,
         userId: parseInt(sessionStorage.getItem("userId"))
@@ -124,7 +125,6 @@ export default class IssueForm extends Component {
 
   handleDropChange(e) {
     this.setState({ selectValue: e.target.value });
-    this.handleDropChange = this.handleDropChange.bind(this);
 
   }
 
@@ -174,14 +174,16 @@ export default class IssueForm extends Component {
                 className="submitBtn"
                 isOpen={this.state.dropdownOpen}
                 toggle={this.toggle}
+
+                // onClick={this.handleDropChange}
               >
-                <DropdownToggle caret>Issue type</DropdownToggle>
+                <DropdownToggle caret >Issue type: {this.state.selectValue}</DropdownToggle>
                 <DropdownMenu id="dropdown" >
-                  <DropdownItem header value="0" onChange={this.handleDropChange}>Choose issue type</DropdownItem>
+                  <DropdownItem header value="0" onClick={this.handleDropChange}>Choose issue type</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem value="1">Road Condition</DropdownItem>
-                  <DropdownItem value="2">Side Walk</DropdownItem>
-                  <DropdownItem value="3">Traffic Light</DropdownItem>
+                  <DropdownItem value="Road" onClick={this.handleDropChange}>Road Condition</DropdownItem>
+                  <DropdownItem value="Sidewalk" onClick={this.handleDropChange}>Side Walk</DropdownItem>
+                  <DropdownItem value="Traffic Light" onClick={this.handleDropChange}>Traffic Light</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </div>
@@ -239,7 +241,7 @@ export default class IssueForm extends Component {
               {this.state.uploadedFileCloudinaryUrl === "" ? null : (
                 <div className="formGroupPicture">
                   {/* <p>{this.state.uploadedFile.name}</p> */}
-                  <img src={this.state.uploadedFileCloudinaryUrl} />
+                  <img src={this.state.uploadedFileCloudinaryUrl} style={{width: "350px", height: "350px"}} />
                 </div>
               )}
             </div>

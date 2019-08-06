@@ -8,8 +8,9 @@ export default class IssueEditForm extends Component {
     userId: "",
     address: "",
     details: "",
-    issueTypeId: "",
-    lngLat: ""
+    issueType: "",
+    lngLat: "",
+    picture: ""
   };
 
   handleFieldChange = evt => {
@@ -29,8 +30,9 @@ export default class IssueEditForm extends Component {
         id: this.props.match.params.issueId,
         address: this.state.address,
         details: this.state.details,
-        issueTypeId: this.state.issueTypeId,
+        issueType: this.state.issueType,
         lngLat: this.state.lngLat,
+        picture: this.state.uploadedFileCloudinaryUrl,
         userId: parseInt(this.state.userId)
       };
 
@@ -46,8 +48,10 @@ export default class IssueEditForm extends Component {
         userId: issue.userId,
         address: issue.address,
         details: issue.details,
-        userTypeId: issue.userTypeId,
-        lngLat: issue.lngLat
+        issueType: issue.issueType,
+        lngLat: issue.lngLat,
+        picture: issue.uploadedFileCloudinaryUrl,
+
       });
     });
   }
@@ -79,14 +83,14 @@ export default class IssueEditForm extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="issueTypeId">Issue Type</label>
+            <label htmlFor="issueType">Issue Type</label>
             <input
               type="text"
               required
               className="form-control"
               onChange={this.handleFieldChange}
-              id="issueTypeId"
-              value={this.state.issueTypeId}
+              id="issueType"
+              value={this.state.issueType}
             />
           </div>
           <div className="form-group">
@@ -100,6 +104,15 @@ export default class IssueEditForm extends Component {
               value={this.state.lngLat}
             />
           </div>
+          <div className="imageCard" >
+              <img
+                type="image"
+                src={this.state.picture}
+                style={{ width: "300px", height: "300px" }}
+                className=""
+                onChange={this.handleFieldChange}
+              />
+            </div>
           <button
             type="submit"
             onClick={this.updateExistingIssue}
