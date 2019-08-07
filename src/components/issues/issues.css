@@ -18,11 +18,14 @@
 }
 .navUpLoad {
     /* border: 3px solid grey; */
+    /* align-content: center; */
     display: flex;
-    flex-direction: row;
-    flex-flow: 10px;
-    padding: 20px;
     justify-content: space-around;
+    align-self: center;
+    flex-direction: row;
+    /* flex-flow: 10px; */
+    padding: 20px;
+    /* align-content: auto; */
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
     /* box-shadow: 5px 10px #888888; */
 }
@@ -34,11 +37,15 @@
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
     /* box-shadow: 5px 10px #888888; */
 /* } */
-/* .formGroupMap {
-    height: 50px;
-    width: 50px;
-} */
-/* .formGroupPicture {
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+.formGroupMap {
+    display: flex;
+    position: center;
+    /* border: 10px solid red; */
 
-} */
+    /* height: 100%;
+    width: 100%; */
+}
+.formGroupPicture {
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+}

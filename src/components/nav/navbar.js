@@ -21,11 +21,6 @@ class NavBar extends Component {
               New Issue
             </Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/imgUpload">
-              Upload Image
-            </Link>
-          </li>
         </ul>
       </nav>
       </div>

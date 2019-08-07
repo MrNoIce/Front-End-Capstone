@@ -32,7 +32,7 @@ export default class IssueEditForm extends Component {
         details: this.state.details,
         issueType: this.state.issueType,
         lngLat: this.state.lngLat,
-        picture: this.state.uploadedFileCloudinaryUrl,
+        picture: this.state.picture,
         userId: parseInt(this.state.userId)
       };
 
@@ -50,7 +50,7 @@ export default class IssueEditForm extends Component {
         details: issue.details,
         issueType: issue.issueType,
         lngLat: issue.lngLat,
-        picture: issue.uploadedFileCloudinaryUrl,
+        picture: issue.picture,
 
       });
     });

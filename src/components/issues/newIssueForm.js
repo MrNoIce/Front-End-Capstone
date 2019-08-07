@@ -187,7 +187,7 @@ export default class IssueForm extends Component {
                 </DropdownMenu>
               </Dropdown>
             </div>
-            <div>Selected value is : {this.state.selectValue}</div>
+            {/* <div>Selected value is : {this.state.selectValue}</div> */}
             <button
               type="submit"
               onClick={this.constructNewIssue}
