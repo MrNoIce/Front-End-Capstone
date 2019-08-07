@@ -18,7 +18,7 @@ const CLOUDINARY_UPLOAD_URL =
   "https://api.cloudinary.com/v1_1/dqwaphhqv/image/upload";
 
 const navStyle = {
-  position: "absolute",
+  position: "",
   top: 50,
   left: 0,
   padding: "10px"
@@ -46,7 +46,7 @@ export default class IssueForm extends Component {
         bearing: 0,
         pitch: 0,
         width: 600,
-        height: 450,
+        height: 500,
         address: "",
         details: "",
         issueType: "",
@@ -166,7 +166,7 @@ export default class IssueForm extends Component {
                 value={this.state.lngLat}
                 onChange={this.handleFieldChange}
                 id="lngLat"
-                placeholder="Click on the map for the specific location"
+                placeholder="Click map of specific location"
               />
             </div>
             <div className="form-group">
@@ -184,6 +184,8 @@ export default class IssueForm extends Component {
                   <DropdownItem value="Road" onClick={this.handleDropChange}>Road Condition</DropdownItem>
                   <DropdownItem value="Sidewalk" onClick={this.handleDropChange}>Side Walk</DropdownItem>
                   <DropdownItem value="Traffic Light" onClick={this.handleDropChange}>Traffic Light</DropdownItem>
+                  <DropdownItem value="NES" onClick={this.handleDropChange}>Power line/telephone pole</DropdownItem>
+                  <DropdownItem value="Metro Water" onClick={this.handleDropChange}>Water line/Sewer</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </div>
@@ -196,19 +198,19 @@ export default class IssueForm extends Component {
               Submit
             </button>
           </form>
-          <div className="formGroupMap">
+          <div className="formGroupMap" >
             <ReactMapGL
               {...viewport}
               mapStyle="mapbox://styles/mapbox/streets-v9"
-              containerStyle={{
-                height: "100vh",
-                width: "100vw"
-              }}
+              // containerStyle={{
+              //   height: "auto",
+              //   width: "auto"
+              // }}
               mapboxApiAccessToken={API_KEY}
               onViewportChange={viewport => this.setState({ viewport })}
               onClick={evt => this.onClickMap(evt)}
             >
-              <div style={{ position: "absolute", right: 0 }} />
+              {/* <div style={{ position: "absolute", right: 0 }} /> */}
               <div className="nav" style={navStyle}>
                 <NavigationControl />
                 <GeolocateControl />
@@ -227,7 +229,7 @@ export default class IssueForm extends Component {
                     <div {...getRootProps()}>
                       <input {...getInputProps()} />
                       {
-                        <button>
+                        <button className="btn btn-primary">
                           Drag and drop or click to select image to upload.
                         </button>
                       }
@@ -241,7 +243,7 @@ export default class IssueForm extends Component {
               {this.state.uploadedFileCloudinaryUrl === "" ? null : (
                 <div className="formGroupPicture">
                   {/* <p>{this.state.uploadedFile.name}</p> */}
-                  <img src={this.state.uploadedFileCloudinaryUrl} style={{width: "350px", height: "350px"}} />
+                  <img src={this.state.uploadedFileCloudinaryUrl} style={{width: "380px", height: "350px"}} />
                 </div>
               )}
             </div>

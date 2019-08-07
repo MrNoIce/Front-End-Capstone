@@ -33,7 +33,7 @@ class Login extends Component {
 
         alert("Hey there, welcome Back")
 
-        this.props.history.push('/home');
+        this.props.history.push('/');
       } else {
         alert('Please Register');
       }

@@ -72,7 +72,7 @@ export default class ApplicationViews extends Component {
         />
         <Route
           exact
-          path="/newIssue"
+          path="/"
           render={props => {
             if (this.isAuthenticated()) {
               return <IssueForm {...props} addIssue={this.addIssue} />;

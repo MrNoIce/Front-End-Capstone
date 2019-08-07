@@ -17,7 +17,7 @@ class NavBar extends Component {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/newIssue">
+            <Link className="nav-link" to="/">
               New Issue
             </Link>
           </li>

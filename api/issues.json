@@ -6,19 +6,8 @@
       "details": "Potholes have taken everything from me.. Even my good tires",
       "issueTypeId": 1,
       "lngLat": "",
+      "picture": "",
       "userId": 2
-    },
-    {
-      "id": 5,
-      "address": "500 Interstate dr Nashville tn",
-      "details": "The school has moved and nonone knows about it this is wild",
-      "issueType": "Road",
-      "lngLat": [
-        -86.72622184876685,
-        36.12776000494232
-      ],
-      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565120060/okwhtazbmcdhrcp7q3ix.jpg",
-      "userId": 3
     },
     {
       "address": "40229 Dickerson Pike",
@@ -43,6 +32,30 @@
       "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565192769/or0jaefqntbzubkgctsw.jpg",
       "userId": 3,
       "id": 7
+    },
+    {
+      "address": "2210 dickerson pike",
+      "details": "The most foot traffic by necessity and there arent any sidewalks ",
+      "issueType": "Sidewalk",
+      "lngLat": [
+        -86.76672634662665,
+        36.208889664191744
+      ],
+      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565219115/ypol0jsprk4fuu6qxnsl.jpg",
+      "userId": 3,
+      "id": 8
+    },
+    {
+      "address": "1019 Walkabout Creek",
+      "details": "The water was a rushing into my pajamas",
+      "issueType": "Traffic Light",
+      "lngLat": [
+        -86.78322131897905,
+        36.16354730598556
+      ],
+      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565220447/niuga0u0tgdxxym5qcuc.jpg",
+      "userId": 3,
+      "id": 9
     }
   ],
   "users": [
