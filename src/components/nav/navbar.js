@@ -5,7 +5,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
+
+
+
+
 class NavBar extends Component {
+  clearSession = () => {
+    sessionStorage.clear()
+  }
   render() {
     return (
       <div className="navBar">
@@ -19,6 +26,11 @@ class NavBar extends Component {
           <li className="nav-item">
             <Link className="nav-link" to="/">
               New Issue
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-link" onClick={this.clearSession} to="/">
+              Log Out
             </Link>
           </li>
         </ul>

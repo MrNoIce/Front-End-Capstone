@@ -23,7 +23,7 @@ export default {
   delete(resource, id) {
     return fetch(`${remoteURL}/${resource}/${id}`, {
       method: "DELETE"
-    });
+    }).then(data => data.json());
   },
 
   put(resource, editedObj) {

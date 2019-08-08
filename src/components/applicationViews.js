@@ -18,14 +18,18 @@ export default class ApplicationViews extends Component {
     users: []
   };
 
-
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
   deleteIssue = issue => {
-    issueManager.delete("issues", issue).then(issues => {
-      this.setState({ issues: issues });
-    });
-  };
+    console.log(this.state.issues)
+    issueManager
+      .delete("issues", issue)
+      .then(() => issueManager.all("issues"))
+      .then(data => {
+        this.setState({ issues: data })
+        // this.props.history.push("/issues")
+      })
+  }
 
   updateIssue = (resourse, editedIssueObject) => {
     return issueManager

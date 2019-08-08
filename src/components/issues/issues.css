@@ -13,7 +13,7 @@
     flex-direction: row;
     flex-flow: 10px;
     padding: 10px;
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3); */
     flex-wrap: wrap;
 
 }
@@ -21,6 +21,7 @@
 .formGroupMap {
     display: flex;
     position: center;
+
 }
 .formGroupPicture {
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
@@ -44,6 +45,8 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 3px;
     margin: 0 auto;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+
 }
 .cards {
     width: auto;
@@ -51,4 +54,5 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 3px;
     margin: 0 auto;
+
 }

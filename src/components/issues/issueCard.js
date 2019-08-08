@@ -8,6 +8,7 @@ const emailCC = "bemybanker@gmail.com";
 const emailSub = "insert issue subject";
 
 export default class IssueCard extends Component {
+  handleDelete = () => {this.props.deleteIssue(this.props.issue.id)}
   render() {
     const emailBody = [
       this.props.issue.address,
@@ -28,8 +29,8 @@ export default class IssueCard extends Component {
                 alt="..."
               />
             </div>
-            <h5>Address: {this.props.issue.address}</h5>
-            <h5>Issue type: {this.props.issue.issueType}</h5>
+            <h5 style={{width:"300px"}}>Address: {this.props.issue.address}</h5>
+            <h5 style={{width:"300px"}}>Issue type: {this.props.issue.issueType}</h5>
             <h6 style={{width:"300px"}}>Details: {this.props.issue.details}</h6>
             <h6 style={{width:"300px"}}>Specific Location: {this.props.issue.lngLat} </h6>
             {/* <Link className="nav-link" to={`/issue/${this.props.issue.id}`}>
@@ -64,13 +65,11 @@ export default class IssueCard extends Component {
             >
               Email
             </button>
-            <a
-              href="#"
-              onClick={() => this.props.deleteIssue(this.props.issue.id)}
-              className="card-link"
-            >
-              Delete
-            </a>
+            <button text="Delete"
+              onClick={this.handleDelete}
+              className="card-link">
+                Delete
+                </button>
           </div>
         </div>
       </div>
