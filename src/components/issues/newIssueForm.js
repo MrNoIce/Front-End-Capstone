@@ -56,7 +56,6 @@ export default class IssueForm extends Component {
       }
     };
     this.handleDropChange = this.handleDropChange.bind(this);
-
   }
 
   toggle() {
@@ -125,100 +124,130 @@ export default class IssueForm extends Component {
 
   handleDropChange(e) {
     this.setState({ selectValue: e.target.value });
-
   }
-
 
   render() {
     const { viewport } = this.state;
     return (
       <React.Fragment>
         <div className="navUpLoad">
-          <form className="issueForm">
-            <div className="form-group">
-              <label htmlFor="address">Location of Issue</label>
-              <input
-                type="text"
-                required
-                className="form-control"
-                onChange={this.handleFieldChange}
-                id="address"
-                placeholder="Address"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="details">Details</label>
-              <input
-                type="text"
-                required
-                className="form-control"
-                onChange={this.handleFieldChange}
-                id="details"
-                placeholder="Details"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="lngLat">Location</label>
-              <input
-                type="text"
-                required
-                className="form-control"
-                value={this.state.lngLat}
-                onChange={this.handleFieldChange}
-                id="lngLat"
-                placeholder="Click map of specific location"
-              />
-            </div>
-            <div className="form-group">
-              <Dropdown
-                className="submitBtn"
-                isOpen={this.state.dropdownOpen}
-                toggle={this.toggle}
-
-                // onClick={this.handleDropChange}
-              >
-                <DropdownToggle caret >Issue type: {this.state.selectValue}</DropdownToggle>
-                <DropdownMenu id="dropdown" >
-                  <DropdownItem header value="0" onClick={this.handleDropChange}>Choose issue type</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem value="Road" onClick={this.handleDropChange}>Road Condition</DropdownItem>
-                  <DropdownItem value="Sidewalk" onClick={this.handleDropChange}>Side Walk</DropdownItem>
-                  <DropdownItem value="Traffic Light" onClick={this.handleDropChange}>Traffic Light</DropdownItem>
-                  <DropdownItem value="NES" onClick={this.handleDropChange}>Power line/telephone pole</DropdownItem>
-                  <DropdownItem value="Metro Water" onClick={this.handleDropChange}>Water line/Sewer</DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-            </div>
-            {/* <div>Selected value is : {this.state.selectValue}</div> */}
-            <button
-              type="submit"
-              onClick={this.constructNewIssue}
-              className="btn btn-primary"
-            >
-              Submit
-            </button>
-          </form>
-          <div className="formGroupMap" >
-            <ReactMapGL
-              {...viewport}
-              mapStyle="mapbox://styles/mapbox/streets-v9"
-              // containerStyle={{
-              //   height: "auto",
-              //   width: "auto"
-              // }}
-              mapboxApiAccessToken={API_KEY}
-              onViewportChange={viewport => this.setState({ viewport })}
-              onClick={evt => this.onClickMap(evt)}
-            >
-              {/* <div style={{ position: "absolute", right: 0 }} /> */}
-              <div className="nav" style={navStyle}>
-                <NavigationControl />
-                <GeolocateControl />
+          <div className="cards">
+            <form className="issueForm">
+              <div className="form-group">
+                <label htmlFor="address">Location of Issue</label>
+                <input
+                  type="text"
+                  required
+                  className="form-control"
+                  onChange={this.handleFieldChange}
+                  id="address"
+                  placeholder="Address"
+                />
               </div>
-            </ReactMapGL>
+              <div className="form-group">
+                <label htmlFor="details">Details</label>
+                <input
+                  type="text"
+                  required
+                  className="form-control"
+                  onChange={this.handleFieldChange}
+                  id="details"
+                  placeholder="Details"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="lngLat">Location</label>
+                <input
+                  type="text"
+                  required
+                  className="form-control"
+                  value={this.state.lngLat}
+                  onChange={this.handleFieldChange}
+                  id="lngLat"
+                  placeholder="Click map of specific location"
+                />
+              </div>
+              <div className="form-group">
+                <Dropdown
+                  className="submitBtn"
+                  isOpen={this.state.dropdownOpen}
+                  toggle={this.toggle}
+
+                  // onClick={this.handleDropChange}
+                >
+                  <DropdownToggle caret>
+                    Issue type: {this.state.selectValue}
+                  </DropdownToggle>
+                  <DropdownMenu id="dropdown">
+                    <DropdownItem
+                      header
+                      value="0"
+                      onClick={this.handleDropChange}
+                    >
+                      Choose issue type
+                    </DropdownItem>
+                    <DropdownItem divider />
+                    <DropdownItem value="Road" onClick={this.handleDropChange}>
+                      Road Condition
+                    </DropdownItem>
+                    <DropdownItem
+                      value="Sidewalk"
+                      onClick={this.handleDropChange}
+                    >
+                      Side Walk
+                    </DropdownItem>
+                    <DropdownItem
+                      value="Traffic Light"
+                      onClick={this.handleDropChange}
+                    >
+                      Traffic Light
+                    </DropdownItem>
+                    <DropdownItem value="NES" onClick={this.handleDropChange}>
+                      Power line/telephone pole
+                    </DropdownItem>
+                    <DropdownItem
+                      value="Metro Water"
+                      onClick={this.handleDropChange}
+                    >
+                      Water line/Sewer
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </div>
+              {/* <div>Selected value is : {this.state.selectValue}</div> */}
+              <button
+                type="submit"
+                onClick={this.constructNewIssue}
+                className="btn btn-primary"
+              >
+                Submit
+              </button>
+            </form>
           </div>
-          <div>
+          <div className="cards">
+            <div className="formGroupMap">
+              <ReactMapGL
+                {...viewport}
+                mapStyle="mapbox://styles/mapbox/streets-v9"
+                // containerStyle={{
+                //   height: "auto",
+                //   width: "auto"
+                // }}
+                mapboxApiAccessToken={API_KEY}
+                onViewportChange={viewport => this.setState({ viewport })}
+                onClick={evt => this.onClickMap(evt)}
+              >
+                {/* <div style={{ position: "absolute", right: 0 }} /> */}
+                <div className="nav" style={navStyle}>
+                  <NavigationControl />
+                  <GeolocateControl />
+                </div>
+              </ReactMapGL>
+            </div>
+          </div>
+          <div className="cards">
             <div className="FileUpload">
+              {/* <div > */}
               <Dropzone
                 onDrop={this.onImageDrop.bind(this)}
                 accept="image/*"
@@ -237,15 +266,19 @@ export default class IssueForm extends Component {
                   );
                 }}
               </Dropzone>
-            </div>
+              {/* </div> */}
 
-            <div>
-              {this.state.uploadedFileCloudinaryUrl === "" ? null : (
-                <div className="formGroupPicture">
-                  {/* <p>{this.state.uploadedFile.name}</p> */}
-                  <img src={this.state.uploadedFileCloudinaryUrl} style={{width: "380px", height: "350px"}} />
-                </div>
-              )}
+              <div>
+                {this.state.uploadedFileCloudinaryUrl === "" ? null : (
+                  <div className="formGroupPicture">
+                    {/* <p>{this.state.uploadedFile.name}</p> */}
+                    <img
+                      src={this.state.uploadedFileCloudinaryUrl}
+                      style={{ width: "380px", height: "350px" }}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

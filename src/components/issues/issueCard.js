@@ -30,8 +30,8 @@ export default class IssueCard extends Component {
             </div>
             <h5>Address: {this.props.issue.address}</h5>
             <h5>Issue type: {this.props.issue.issueType}</h5>
-            <h6>Details: {this.props.issue.details}</h6>
-            <h6>Specific Location: {this.props.issue.lngLat} </h6>
+            <h6 style={{width:"300px"}}>Details: {this.props.issue.details}</h6>
+            <h6 style={{width:"300px"}}>Specific Location: {this.props.issue.lngLat} </h6>
             {/* <Link className="nav-link" to={`/issue/${this.props.issue.id}`}>
               Details
             </Link> */}

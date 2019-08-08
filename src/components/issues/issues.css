@@ -1,55 +1,53 @@
 .button.btn.btn-success {
     background-color: rgb(76, 76, 160);
 }
-.card {
-    display: flex;
-    flex-direction: row;
-}
 .form-control {
-    width: 130%;
+    width: 100%;
 }
-/* .imageCard {
-    width: 20px;
-    height: 20px;
-} */
-/* .show>.dropdownMenuButton {
-    display: block;
-    position: absolute;
-  } */
 .button.btn.submitBtn {
     background-color: solid red;
 }
 .navUpLoad {
-    /* border: 3px solid grey; */
-    /* align-content: center; */
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-self: center;
     flex-direction: row;
     flex-flow: 10px;
-    padding: 20px;
-    /* align-content: auto; */
+    padding: 10px;
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-    /* box-shadow: 5px 10px #888888; */
 }
-/* .form-group { */
-    /* border: 3px opaque grey; */
-/* } */
 
-/* .issueForm {
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-    /* box-shadow: 5px 10px #888888; */
-/* } */
 .formGroupMap {
     display: flex;
     position: center;
-    
-    /* border: 10px solid red; */
-
-    /* height: 100%;
-    width: 100%; */
 }
 .formGroupPicture {
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
     display: flex;
+}
+.issues {
+    display: flex;
+    justify-content: space-around;
+    /* align-self: center; */
+    flex-direction: row;
+    /* flex-flow: repeat; */
+    padding: 10px;
+    flex-wrap: wrap;
+
+}
+.card {
+    display: flex;
+    width: auto;
+    position: relative;
+    flex-basis: auto;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 3px;
+    margin: 0 auto;
+}
+.cards {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 3px;
+    margin: 0 auto;
 }

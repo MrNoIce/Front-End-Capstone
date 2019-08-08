@@ -25,15 +25,6 @@ getUserIssues = () => {
       {this.log(this.state.issues)}
     return (
       <React.Fragment>
-        <div className="issueButton">
-          {/* <button
-            type="button"
-            onClick={() => window.open('mailto:bemybanker@gmail.com')}
-            className="btn btn-primary"
-          >
-            Add New Article
-          </button> */}
-        </div>
         <section className="issues">
           {this.state.issues.map(issue => (
             <IssueCard key={issue.id} issue={issue} {...this.props} />
