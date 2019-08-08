@@ -18,16 +18,27 @@ getUserIssues = () => {
     issueManager.all(parseInt(sessionStorage.getItem("userId")))
       .then(userIssues => this.setState({issues: userIssues}))
   }
+  deleteIssue = issue => {
+    issueManager
+      .delete("issues", issue)
+      .then(() => issueManager.all(+sessionStorage.getItem("userId")))
+      .then(data => {
+        this.setState({ issues: data })
+      })
+      .then(() => console.log(this.state))
+      .then(() =>  this.props.history.push("/issues"))
+  }
   componentDidMount() {
+    console.log("issue list component mount")
     this.getUserIssues(userId);
   }
   render() {
-      {this.log(this.state.issues)}
+    console.log("issue list render")
     return (
       <React.Fragment>
         <section className="issues">
           {this.state.issues.map(issue => (
-            <IssueCard key={issue.id} issue={issue} {...this.props} />
+            <IssueCard key={issue.id} issue={issue} {...this.props} deleteIssue={this.deleteIssue} />
           ))}
         </section>
       </React.Fragment>

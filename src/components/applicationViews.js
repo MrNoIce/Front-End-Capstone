@@ -1,4 +1,4 @@
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, withRouter } from "react-router-dom";
 import React, { Component } from "react";
 import IssueList from "./issues/issueList";
 import Login from "./authentication/login";
@@ -11,7 +11,7 @@ import IssueForm from "./issues/newIssueForm";
 import "./issues/issues.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default class ApplicationViews extends Component {
+class ApplicationViews extends Component {
   state = {
     issues: [],
     lngLat: [],
@@ -20,16 +20,7 @@ export default class ApplicationViews extends Component {
 
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
-  deleteIssue = issue => {
-    console.log(this.state.issues)
-    issueManager
-      .delete("issues", issue)
-      .then(() => issueManager.all("issues"))
-      .then(data => {
-        this.setState({ issues: data })
-        // this.props.history.push("/issues")
-      })
-  }
+
 
   updateIssue = (resourse, editedIssueObject) => {
     return issueManager
@@ -55,6 +46,7 @@ export default class ApplicationViews extends Component {
   };
 
   render() {
+    console.log("app render trigger")
     return (
       <React.Fragment>
         <Route
@@ -66,7 +58,7 @@ export default class ApplicationViews extends Component {
                 <IssueList
                   {...props}
                   getUserIssues={this.getUserIssues}
-                  deleteIssue={this.deleteIssue}
+
                 />
               );
             } else {
@@ -112,3 +104,5 @@ export default class ApplicationViews extends Component {
     );
   }
 }
+
+export default withRouter(ApplicationViews)

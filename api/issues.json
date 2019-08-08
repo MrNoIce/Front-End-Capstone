@@ -1,85 +1,28 @@
 {
   "issues": [
     {
-      "id": 3,
-      "address": "7033 Thata way",
-      "details": "Potholes have taken everything from me.. Even my good tires",
-      "issueTypeId": 1,
-      "lngLat": "",
-      "picture": "",
-      "userId": 2
-    },
-    {
       "address": "2211 dickerson pike",
-      "details": "This pothole is something else",
-      "issueType": "Traffic Light",
+      "details": "Thsis pothole is out of control",
+      "issueType": "Road",
       "lngLat": [
-        -86.78426235135295,
-        36.16417095127275
+        -86.78153186257069,
+        36.166682805664955
       ],
-      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565289680/vfbklxzkensr0ibydeau.jpg",
+      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565297512/sjfspqymndsivoj2vpr5.jpg",
       "userId": 3,
-      "id": 5
-    },
-    {
-      "address": "2211 dickerson pike",
-      "details": "When you have all the ideas in the world for everything to be overwhelming",
-      "issueType": "NES",
-      "lngLat": [
-        -86.78258865292766,
-        36.16363392368741
-      ],
-      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565290238/fsqd8ggubfhqohdhe3e2.png",
-      "userId": 3,
-      "id": 9
-    },
-    {
-      "id": 10,
-      "address": "2211 dickerson pike",
-      "details": "This pothole is something else.. Please fucking fix this",
-      "issueType": "NES",
-      "lngLat": [
-        -86.7810222428604,
-        36.16404968730404
-      ],
-      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565294491/tnienqqsmtmdnor38uqn.jpg",
-      "userId": 3
-    },
-    {
-      "address": "2211 dickerson pike",
-      "details": "When you have all the ideas in the world for everything to be overwhelming",
-      "issueType": "Sidewalk",
-      "lngLat": [
-        -86.78211658413846,
-        36.163599276615685
-      ],
-      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565294790/cl2f9n5d9jpko8m4oalq.png",
-      "userId": 3,
-      "id": 11
-    },
-    {
-      "address": "2211 dickerson pike",
-      "details": "When you have all the ideas in the world for everything to be overwhelming",
-      "issueType": "Metro Water",
-      "lngLat": [
-        -86.84908402804821,
-        36.16218634048177
-      ],
-      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565294818/fokfhrqi6vdyipzwf4il.jpg",
-      "userId": 3,
-      "id": 12
+      "id": 2
     },
     {
       "address": "2211 dickerson pike",
       "details": "Thsis pothole is out of control",
       "issueType": "Road",
       "lngLat": [
-        -86.77773921902616,
-        36.16404968730404
+        -86.78234725411632,
+        36.16351265888176
       ],
-      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565294847/e5isghdveh6c6n46pgvi.png",
+      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565297527/mvguzefn4fbdsdjwxdxj.jpg",
       "userId": 3,
-      "id": 13
+      "id": 3
     }
   ],
   "users": [
