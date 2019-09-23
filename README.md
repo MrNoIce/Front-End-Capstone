@@ -1,10 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 You must create a mapbox account to get an api key and insert into an .env folder created in the root directory with REACT_APP_API_KEY as the key name. If you don't want to go through that mess, message me and i'll send you mine.
 
 ## Available Scripts
-Clone downe the repository, cd into the project directory. (front-end-capstone)
-In the project directory, you can run:
+Clone down the repository, cd into the project directory. (front-end-capstone) <br>
+And in the project directory run:
 
 ### `npm start`
 
@@ -22,7 +21,3 @@ Inside of the api folder (api) of the app, run this command to start the databas
 Login with any user name or password
 
 ### `
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
