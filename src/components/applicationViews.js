@@ -84,21 +84,6 @@ class ApplicationViews extends Component {
             return <IssueEditForm {...props} updateIssue={this.updateIssue} />;
           }}
         />
-        {/* <Route
-          exact
-          path="/imgUpload"
-          render={props => {
-            if (this.isAuthenticated()) {
-              return (
-                <Image
-                  {...props}
-                />
-              );
-            } else {
-              return <Redirect to="/login" />;
-            }
-          }}
-        /> */}
         <Route exact path="/login" component={Login} />
       </React.Fragment>
     );

@@ -229,15 +229,10 @@ export default class IssueForm extends Component {
               <ReactMapGL
                 {...viewport}
                 mapStyle="mapbox://styles/mapbox/streets-v9"
-                // containerStyle={{
-                //   height: "auto",
-                //   width: "auto"
-                // }}
                 mapboxApiAccessToken={API_KEY}
                 onViewportChange={viewport => this.setState({ viewport })}
                 onClick={evt => this.onClickMap(evt)}
               >
-                {/* <div style={{ position: "absolute", right: 0 }} /> */}
                 <div className="nav" style={navStyle}>
                   <NavigationControl />
                   <GeolocateControl />
@@ -271,7 +266,6 @@ export default class IssueForm extends Component {
               <div>
                 {this.state.uploadedFileCloudinaryUrl === "" ? null : (
                   <div className="formGroupPicture">
-                    {/* <p>{this.state.uploadedFile.name}</p> */}
                     <img
                       src={this.state.uploadedFileCloudinaryUrl}
                       style={{ width: "380px", height: "350px" }}
