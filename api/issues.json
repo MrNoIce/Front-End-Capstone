@@ -1,42 +1,6 @@
 {
   "issues": [
     {
-      "address": "2211 dickerson pike",
-      "details": "Thsis pothole is out of control",
-      "issueType": "Road",
-      "lngLat": [
-        -86.78153186257069,
-        36.166682805664955
-      ],
-      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565297512/sjfspqymndsivoj2vpr5.jpg",
-      "userId": 3,
-      "id": 2
-    },
-    {
-      "address": "westend",
-      "details": "side walk is super fucked",
-      "issueType": "Sidewalk",
-      "lngLat": [
-        -86.78659885940648,
-        36.163295011207275
-      ],
-      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565359966/ncbehnaiicuasdgafuym.jpg",
-      "userId": 3,
-      "id": 4
-    },
-    {
-      "address": "2211 dickerson pike",
-      "details": "The power lines are scary",
-      "issueType": "NES",
-      "lngLat": [
-        -86.78105022245057,
-        36.16443782245203
-      ],
-      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565360036/srqx8pkphoynwm1zpuc9.jpg",
-      "userId": 3,
-      "id": 5
-    },
-    {
       "address": "metro center",
       "details": "The flooding is super bad",
       "issueType": "Metro Water",
@@ -47,6 +11,78 @@
       "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565360121/yf5bfz3kuaucqgbncumh.jpg",
       "userId": 3,
       "id": 6
+    },
+    {
+      "address": "Metro center",
+      "details": "Side walk needed",
+      "issueType": "Sidewalk",
+      "lngLat": [
+        -86.79783191668426,
+        36.19243678095765
+      ],
+      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565362208/gsskjx9l9lg9opus2jdg.jpg",
+      "userId": 3,
+      "id": 7
+    },
+    {
+      "address": "westchester",
+      "details": "This pothole is something else",
+      "issueType": "Road",
+      "lngLat": [
+        -86.76112393535551,
+        36.26290029873108
+      ],
+      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1565386291/xqh3v4gpvemsceevolkc.jpg",
+      "userId": 3,
+      "id": 8
+    },
+    {
+      "id": 10,
+      "address": "Demonbruen ave south",
+      "details": "These power lines are sketch",
+      "issueType": "NES",
+      "lngLat": [
+        -86.75879053993313,
+        36.26335087904732
+      ],
+      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1566224663/fgbmq00lphpnp57y2jzl.jpg",
+      "userId": 3
+    },
+    {
+      "address": "plus prk",
+      "details": "power lines are super messed up",
+      "issueType": "NES",
+      "lngLat": [
+        -86.72527929705745,
+        36.12812992882484
+      ],
+      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1566310252/tlmfmq6yzlgj3vplkudv.jpg",
+      "userId": 3,
+      "id": 11
+    },
+    {
+      "address": "1022 Lightening drive",
+      "details": "The traffic light suxx",
+      "issueType": "Traffic Light",
+      "lngLat": [
+        -86.75904807030497,
+        36.26337779029316
+      ],
+      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1568980532/puo04sbznhydtgf7ldc7.jpg",
+      "userId": 3,
+      "id": 12
+    },
+    {
+      "address": "Wyoming ave",
+      "details": "Brother helps",
+      "issueType": "NES",
+      "lngLat": [
+        -86.75886258236751,
+        36.263354593966135
+      ],
+      "picture": "https://res.cloudinary.com/dqwaphhqv/image/upload/v1569239444/k58lw18h8bdkmoqb114p.jpg",
+      "userId": 3,
+      "id": 13
     }
   ],
   "users": [

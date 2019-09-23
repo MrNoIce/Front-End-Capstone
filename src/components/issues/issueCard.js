@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import "./issues.css";
 
 const emailTo = "bemybanker@gmail.com";
@@ -33,10 +31,6 @@ export default class IssueCard extends Component {
             <h5 style={{width:"300px"}}>Issue type: {this.props.issue.issueType}</h5>
             <h6 style={{width:"300px"}}>Details: {this.props.issue.details}</h6>
             <h6 style={{width:"300px"}}>Specific Location: {this.props.issue.lngLat} </h6>
-            {/* <Link className="nav-link" to={`/issue/${this.props.issue.id}`}>
-              Details
-            </Link> */}
-
             <button
               type="button"
               className="btn btn-info"
