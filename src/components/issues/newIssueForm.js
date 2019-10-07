@@ -12,6 +12,7 @@ import ReactMapGL, { NavigationControl, GeolocateControl } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./issues.css";
 
+
 const API_KEY = process.env.REACT_APP_API_KEY;
 const CLOUDINARY_UPLOAD_PRESET = "uploadCapstone";
 const CLOUDINARY_UPLOAD_URL =
@@ -24,6 +25,7 @@ const navStyle = {
   padding: "10px"
 };
 
+//accessing the mapbox api, cloudinary api, the form, and rendering to dom
 export default class IssueForm extends Component {
   // Set initial state
   onClickMap = evt => {
@@ -32,6 +34,7 @@ export default class IssueForm extends Component {
       lngLat: evt.lngLat
     });
   };
+  //map rendering
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -57,7 +60,7 @@ export default class IssueForm extends Component {
     };
     this.handleDropChange = this.handleDropChange.bind(this);
   }
-
+//drop down toggle for issue type page
   toggle() {
     this.setState(prevState => ({
       dropdownOpen: !prevState.dropdownOpen
@@ -70,7 +73,7 @@ export default class IssueForm extends Component {
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
-
+  //data handeler for form to database
   constructNewIssue = evt => {
     evt.preventDefault();
     if (this.state.address === "") {
@@ -95,7 +98,7 @@ export default class IssueForm extends Component {
       dropdownOpen: !prevState.dropdownOpen
     }));
   }
-  //image uploading
+  //image upload cloudinary api
   onImageDrop(files) {
     this.setState({
       uploadedFile: files[0]
@@ -125,7 +128,7 @@ export default class IssueForm extends Component {
   handleDropChange(e) {
     this.setState({ selectValue: e.target.value });
   }
-
+//dom rendering of each component for the form on the new issue page
   render() {
     const { viewport } = this.state;
     return (

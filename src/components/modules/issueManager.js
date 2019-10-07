@@ -1,3 +1,6 @@
+
+//fetch calls to get data from our database.json
+
 const remoteURL = "http://localhost:5002";
 
 export default {

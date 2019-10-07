@@ -4,7 +4,7 @@ import issueManager from "../modules/issueManager";
 import "./issues.css"
 
 
-
+//getting the user to display only their issues
 let userId = sessionStorage.getItem("userId");
 
 export default class IssueList extends Component {
